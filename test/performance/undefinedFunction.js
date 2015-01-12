@@ -67,109 +67,97 @@ describe("Undefined function. Fastest way to call a function if it's not known w
         return result;
     }
 
-    describe("which is fastest", function() {
 
-        it("", function(done) {
+    it("", function() {
 
-            var fns = functionArray1;
+        var fns = functionArray1;
 
-            Timer.reset();
+        Timer.reset();
 
-            for(var i = 0; i < length; i++)
+        for(var i = 0; i < length; i++)
+        {
+            var fn = fns[i];
+
+            if(fn)
             {
-                var fn = fns[i];
-
-                if(fn)
-                {
-                    fn();
-                }
-            }
-
-            Timer.printElapsed("if(fn) fn()");
-
-            done();
-        });
-
-        it("", function(done) {
-
-            var fns = functionArray1;
-
-            Timer.reset();
-
-            for(var i = 0; i < length; i++)
-            {
-                var fn = fns[i];
-
-                if(typeof fn === 'function')
-                {
-                    fn();
-                }
-            }
-
-            Timer.printElapsed("if(typeof fn === 'function') fn()");
-
-            done();
-        });
-
-        it("", function(done) {
-
-            var fns = functionArray1;
-
-            Timer.reset();
-
-            for(var i = 0; i < length; i++)
-            {
-                var fn = fns[i];
-
-                if(fn != undefined)
-                {
-                    fn();
-                }
-            }
-
-            Timer.printElapsed("fn != undefined");
-
-            done();
-        });
-
-        it("", function(done) {
-
-            var fns = functionArray1;
-
-            Timer.reset();
-
-            for(var i = 0; i < length; i++)
-            {
-                var fn = fns[i];
-
-                if(fn !== undefined)
-                {
-                    fn();
-                }
-            }
-
-            Timer.printElapsed("fn !== undefined");
-
-            done();
-        });
-
-        it("", function(done) {
-
-            var fns = functionArray2;
-
-            Timer.reset();
-
-            for(var i = 0; i < length; i++)
-            {
-                var fn = fns[i];
-
                 fn();
             }
+        }
 
-            Timer.printElapsed("fn(), call a dummy function instead of checking it is defined");
+        Timer.printElapsed("if(fn) fn()");
+    });
 
-            done();
-        });
+    it("", function() {
+
+        var fns = functionArray1;
+
+        Timer.reset();
+
+        for(var i = 0; i < length; i++)
+        {
+            var fn = fns[i];
+
+            if(typeof fn === 'function')
+            {
+                fn();
+            }
+        }
+
+        Timer.printElapsed("if(typeof fn === 'function') fn()");
+    });
+
+    it("", function() {
+
+        var fns = functionArray1;
+
+        Timer.reset();
+
+        for(var i = 0; i < length; i++)
+        {
+            var fn = fns[i];
+
+            if(fn != undefined)
+            {
+                fn();
+            }
+        }
+
+        Timer.printElapsed("fn != undefined");
+    });
+
+    it("", function() {
+
+        var fns = functionArray1;
+
+        Timer.reset();
+
+        for(var i = 0; i < length; i++)
+        {
+            var fn = fns[i];
+
+            if(fn !== undefined)
+            {
+                fn();
+            }
+        }
+
+        Timer.printElapsed("fn !== undefined");
+    });
+
+    it("", function() {
+
+        var fns = functionArray2;
+
+        Timer.reset();
+
+        for(var i = 0; i < length; i++)
+        {
+            var fn = fns[i];
+
+            fn();
+        }
+
+        Timer.printElapsed("fn(), call a dummy function instead of checking it is defined");
     });
 
 
