@@ -67,7 +67,6 @@ describe("Undefined function. Fastest way to call a function if it's not known w
         return result;
     }
 
-
     it("", function() {
 
         var fns = functionArray1;
