@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+
+<script src="../../bower_components/JSLitmus/index.js"></script>
+
+<script type="text/javascript">
+
+var undefinedFunction;
+var dummyFunction = function() {}
+
+JSLitmus.test('if(fn) (fn is undefined)', function() {
+
+    if(undefinedFunction)
+    {
+        undefinedFunction();
+    }
+
+});
+
+JSLitmus.test('if(fn) (fn is defined)', function() {
+
+    if(dummyFunction)
+    {
+        dummyFunction();
+    }
+
+});
+
+JSLitmus.test("typeof (fn is undefined)", function() {
+
+    if(typeof undefinedFunction === 'function')
+    {
+        undefinedFunction();
+    }
+
+});
+
+JSLitmus.test("typeof (fn is defined)", function() {
+
+    if(typeof dummyFunction === 'function')
+    {
+        dummyFunction();
+    }
+
+});
+
+JSLitmus.test("!= undefined (fn is undefined)", function() {
+
+    if(undefinedFunction != undefined)
+    {
+        undefinedFunction();
+    }
+
+});
+
+JSLitmus.test("!= undefined (fn is defined)", function() {
+
+    if(dummyFunction != undefined)
+    {
+        dummyFunction();
+    }
+
+});
+
+JSLitmus.test("!== undefined (fn is undefined)", function() {
+
+    if(undefinedFunction !== undefined)
+    {
+        undefinedFunction();
+    }
+
+});
+
+JSLitmus.test("!== undefined (fn is defined)", function() {
+
+    if(dummyFunction !== undefined)
+    {
+        dummyFunction();
+    }
+
+});
+
+JSLitmus.test("dummy function", function() {
+
+    dummyFunction();
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>

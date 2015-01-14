@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+
+<script src="../../bower_components/JSLitmus/index.js"></script>
+
+<script type="text/javascript">
+
+JSLitmus.test('Invoking anonymouse self executing function', function() {
+
+    (function () {
+    })();
+
+});
+
+var functionVariable = function() {};
+JSLitmus.test('Invoking function variable', function() {
+
+    functionVariable();
+
+});
+
+function namedFunction() {};
+JSLitmus.test('Invoking named function', function() {
+
+    namedFunction();
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>
