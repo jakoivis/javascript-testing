@@ -28,6 +28,27 @@ JSLitmus.test('Invoking named function', function() {
 
 });
 
+function doCallback(callback) {callback();}
+JSLitmus.test('Invoking anonymous function callback', function() {
+
+    doCallback(function() {});
+
+});
+
+JSLitmus.test('Invoking variable function callback', function() {
+
+    doCallback(functionVariable);
+
+});
+
+
+JSLitmus.test('Invoking named function callback', function() {
+
+    doCallback(namedFunction);
+
+});
+
+
 </script>
 
 </head>
